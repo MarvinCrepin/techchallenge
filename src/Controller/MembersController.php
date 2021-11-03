@@ -17,13 +17,12 @@ class MembersController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $member = array_map('trim', $_POST);
+            if (!empty($member['name'])){
+                $membersManager = new MembersManager();
+                $membersManager->insert($member);
+                header('Location: /');
+            }
 
-            // TODO validations (length, format...)
-
-            // if validation is ok, insert and redirection
-            $membersManager = new MembersManager();
-            $membersManager->insert($member);
-            header('Location: /');
         }
         return $this->twig->render('Home/index.html.twig', ['members' => $members]);
     }
