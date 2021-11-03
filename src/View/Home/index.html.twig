@@ -14,7 +14,7 @@
   
   <!-- New member form -->
   <h2>Ajouter un(e) Argonaute</h2>
-  <form class="new-member-form">
+  <form class="new-member-form" method="post">
     <label for="name">Nom de l&apos;Argonaute</label>
     <input id="name" name="name" type="text" placeholder="Charalampos" />
     <button type="submit">Envoyer</button>
@@ -23,9 +23,10 @@
   <!-- Member list -->
   <h2>Membres de l'équipage</h2>
   <section class="member-list">
-    <div class="member-item">Eleftheria</div>
-    <div class="member-item">Gennadios</div>
-    <div class="member-item">Lysimachos</div>
+  {% for member in members %}
+    <div class="member-item">{{ member.name }}</div>
+  {% endfor %}
+
   </section>
 </main>
 
