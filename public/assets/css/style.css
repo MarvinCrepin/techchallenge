@@ -40,7 +40,8 @@ label {
 }
 
 .member-item {
-  padding: 0.25em 0;
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
 footer {
