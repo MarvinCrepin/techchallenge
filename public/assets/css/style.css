@@ -3,6 +3,9 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -45,9 +48,30 @@ label {
 }
 
 footer {
-  margin-top: 2em;
+  margin-top: auto;
   text-align: center;
   color: #fff;
   background: #f76c6c;
   padding: 0.25em 0;
+  width: 100%;
+}
+
+footer p {
+  align-self: flex-end;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+li {
+  list-style-type: none;
 }

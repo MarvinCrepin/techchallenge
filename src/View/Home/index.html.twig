@@ -24,8 +24,12 @@
   <h2>Membres de l'équipage</h2>
   <section class="member-list">
   {% for member in members %}
-    <div class="member-item">{{ member.name }}</div>
+  <div class="row">
+    <div class="column">
+    <li class="member-item">{{ member.name }}</li>
+    </div>
   {% endfor %}
+  </div>
 
   </section>
 </main>
